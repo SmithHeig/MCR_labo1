@@ -13,10 +13,13 @@ import java.awt.event.*;
  *
  * @author Jeremie
  */
-public class Clock  extends JPanel {
-    private final GridBagConstraints constraints = new GridBagConstraints();
-    
-    public Clock(){
+public class Clock  extends JPanel implements Observer{
+    //private final GridBagConstraints constraints = new GridBagConstraints();
+    private Time t;
+    public Clock(Time t){
+        super();
+        this.t = t;
+        
         
         /*super("mcr_labo01_observeurobserve.Clock");
         //setDefaultCloseOperation();
@@ -33,8 +36,8 @@ public class Clock  extends JPanel {
         setResizable(false);
         pack();*/
     }
-    
-    public void show(){
+        
+    public void update(){
         
     }
 }

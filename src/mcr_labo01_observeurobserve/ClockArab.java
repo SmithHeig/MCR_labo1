@@ -10,11 +10,7 @@ package mcr_labo01_observeurobserve;
  * @author james
  */
 public class ClockArab extends ClockMechanic{
-    public ClockArab(){
-        
-    }
-    
-    public void show(){
-        
+    public ClockArab(Time t){
+        super(t, "clock1.jpg"); 
     }
 }

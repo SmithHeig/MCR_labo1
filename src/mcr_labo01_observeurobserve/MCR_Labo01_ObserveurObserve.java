@@ -28,25 +28,6 @@ public class MCR_Labo01_ObserveurObserve extends JFrame {
         b.addActionListener(actionListener);
     }
 
-    /*
-    * Ajout d'un bouton dans l'interface et de l'operation associee,
-    * instance de la classe Operation, possedeant une methode execute()
-     */
- /*private void addOperatorButton(String name, int x, int y, Color color, 
-                                  final Operator operator)
-    {
-     JButton b = new JButton(name);
-     b.setForeground(color);
-     constraints.gridx = x;
-     constraints.gridy = y;
-     getContentPane().add(b, constraints);
-
-     b.addActionListener(new ActionListener() {
-         public void actionPerformed(ActionEvent e) {
-           operator.execute();
-         }});
-    }
-     */
     public MCR_Labo01_ObserveurObserve() {
 
         super("mcr_labo01_observeurobserve.MCR_Labo01_ObserveurObserve");
@@ -59,78 +40,76 @@ public class MCR_Labo01_ObserveurObserve extends JFrame {
         
         Time t = new Time();
         
-        addButton("Horloge romaine", 0, 0, Color.RED, new ActionListener() {
+        addButton("Horloge romaine", 0, 0, Color.BLACK, new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 JFrame fram = new JFrame("Horloge Romaine");
-                fram.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                fram.getContentPane().setLayout(new GridBagLayout());
+                fram.setSize(300,330);
+                ClockRomain cr = new ClockRomain(t);
 
-                ClockRomain cr = new ClockRomain();
-
-                fram.setContentPane(cr);
+                fram.add(cr);
                 fram.setVisible(true);
             }
         });
         
-        addButton("Horloge arabe", 1, 0, Color.RED, new ActionListener() {
+        addButton("Horloge arabe", 1, 0, Color.BLACK, new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 JFrame fram = new JFrame("Horloge Arabe");
-                fram.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                fram.setSize(300,330);
 
-                ClockArab ca = new ClockArab();
+                ClockArab ca = new ClockArab(t);
 
-                fram.setContentPane(ca);
+                fram.add(ca);
                 fram.setVisible(true);
             }
         });
         
-        addButton("Horloge numérique", 2, 0, Color.RED, new ActionListener() {
+        addButton("Horloge numérique", 2, 0, Color.BLACK, new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 JFrame fram = new JFrame("Horloge Numérique");
-                fram.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                fram.setSize(300,330);
 
-                ClockNumeric cn = new ClockNumeric();
+                ClockNumeric cn = new ClockNumeric(t);
 
                 fram.setContentPane(cn);
                 fram.setVisible(true);
             }
         });
         
-        addButton("Horloge mixte", 3, 0, Color.RED, new ActionListener() {
+        addButton("Horloge mixte", 3, 0, Color.BLACK, new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 JFrame fram = new JFrame("Horloge Mixte");
-                fram.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                fram.setSize(300,990);
                 
-                ClockRomain cr = new ClockRomain();
-                ClockArab ca = new ClockArab();
-                ClockNumeric cn = new ClockNumeric();
+                ClockRomain cr = new ClockRomain(t);
+                ClockArab ca = new ClockArab(t);
+                ClockNumeric cn = new ClockNumeric(t);
 
                 fram.setContentPane(cr);
-                fram.setContentPane(ca);
-                fram.setContentPane(cn);
+                fram.add(ca);
+                fram.add(cn);
                 fram.setVisible(true);
             }
         });
         
-        addButton("Démarrer", 0, 1, Color.RED, new ActionListener() {
+        addButton("Démarrer", 0, 1, Color.BLACK, new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 t.start();
             }
         });
         
-        addButton("Arreter", 1, 1, Color.RED, new ActionListener() {
+        addButton("Arreter", 1, 1, Color.BLACK, new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 t.stop();
             }
         });
         
-        addButton("Réinitialiser", 2, 1, Color.RED, new ActionListener() {
+        addButton("Réinitialiser", 2, 1, Color.BLACK, new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 t.reset();
             }
         });
         
-        addButton("Quitter", 3, 1, Color.RED, new ActionListener() {
+        addButton("Quitter", 3, 1, Color.BLACK, new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 System.exit(0);
             }

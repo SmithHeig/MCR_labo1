@@ -9,12 +9,13 @@ package mcr_labo01_observeurobserve;
  *
  * @author james
  */
+
+import javax.swing.JLabel;
+
 public class ClockNumeric extends Clock{
-    public ClockNumeric(){
-        
+    public ClockNumeric(Time t){
+        super(t);
+        //JLabel label = new JLabel(t);
     }
     
-    public void show(){
-        
-    }
 }

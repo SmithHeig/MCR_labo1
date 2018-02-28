@@ -9,8 +9,8 @@ package mcr_labo01_observeurobserve;
  *
  * @author james
  */
-public class ClockRomain extends ClockMechanic{
-    public ClockRomain(Time t){
-        super(t, "clock2.jpg"); 
-    }    
+public interface Subject {
+    void attach(Observer o);
+    void detach(Observer o);
+    void notifyObserver();
 }

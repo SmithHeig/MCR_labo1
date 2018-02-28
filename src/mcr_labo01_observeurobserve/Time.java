@@ -12,7 +12,7 @@ package mcr_labo01_observeurobserve;
 
 import java.util.Timer;
 
-public class Time {
+public class Time implements Subject{
     private Timer t;
     
     public Time(){
@@ -33,5 +33,21 @@ public class Time {
     
     public Timer getTime() {
         return t;
+    }
+    
+    public void attach(Observer o){
+        
+    }
+    
+    public void detach(Observer o){
+        
+    }
+    
+    public void notifyObserver(){
+        
+    }
+    
+    public String toString(){
+        return "hello";
     }
 }
