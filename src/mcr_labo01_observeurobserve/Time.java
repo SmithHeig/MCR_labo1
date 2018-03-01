@@ -100,4 +100,7 @@ public class Time implements Subject{
         }
         notifyObserver();
     }
+    public boolean isRunning(){
+        return run;
+    }
 }
