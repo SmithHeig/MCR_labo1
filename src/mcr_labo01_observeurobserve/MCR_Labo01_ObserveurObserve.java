@@ -44,9 +44,8 @@ public class MCR_Labo01_ObserveurObserve extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 JFrame fram = new JFrame("Horloge Romaine");
                 fram.setSize(300,330);
-                ClockRomain cr = new ClockRomain(t);
 
-                fram.add(cr);
+                fram.add(new ClockRomain(t));
                 fram.setVisible(true);
             }
         });
@@ -56,9 +55,7 @@ public class MCR_Labo01_ObserveurObserve extends JFrame {
                 JFrame fram = new JFrame("Horloge Arabe");
                 fram.setSize(300,330);
 
-                ClockArab ca = new ClockArab(t);
-
-                fram.add(ca);
+                fram.add(new ClockArab(t));
                 fram.setVisible(true);
             }
         });
@@ -68,9 +65,7 @@ public class MCR_Labo01_ObserveurObserve extends JFrame {
                 JFrame fram = new JFrame("Horloge Numérique");
                 fram.setSize(300,330);
 
-                ClockNumeric cn = new ClockNumeric(t);
-
-                fram.setContentPane(cn);
+                fram.add(new ClockNumeric(t));
                 fram.setVisible(true);
             }
         });
@@ -78,13 +73,15 @@ public class MCR_Labo01_ObserveurObserve extends JFrame {
         addButton("Horloge mixte", 3, 0, Color.BLACK, new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 JFrame fram = new JFrame("Horloge Mixte");
+                FlowLayout layout = new FlowLayout(FlowLayout.LEFT);
+                fram.setLayout(layout);
                 fram.setSize(300,990);
                 
                 ClockRomain cr = new ClockRomain(t);
                 ClockArab ca = new ClockArab(t);
                 ClockNumeric cn = new ClockNumeric(t);
-
-                fram.setContentPane(cr);
+                
+                fram.add(cr);
                 fram.add(ca);
                 fram.add(cn);
                 fram.setVisible(true);
