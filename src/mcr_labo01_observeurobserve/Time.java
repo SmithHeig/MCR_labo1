@@ -15,13 +15,19 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class Time implements Subject{
+    /** Constante **/
+    final int SECOND = 1000; // une seconde est 1000 millisecondes
+    
+    /* Variable */
     private Timer t;
+    boolean run;
+    TimerTask tt;
+    /** Data du timer */
     int seconds;
     int minutes;
     int hours;
+    /* observer */
     LinkedList<Observer> observers;
-    boolean run;
-    TimerTask tt;
     
     public Time(){
         t = new Timer();
@@ -39,7 +45,7 @@ public class Time implements Subject{
                     increments();
                 };
             };
-            t.scheduleAtFixedRate(tt, 1000,1000);
+            t.scheduleAtFixedRate(tt, SECOND,SECOND);
         }
     }
     
@@ -56,10 +62,6 @@ public class Time implements Subject{
         hours = 0;
         notifyObserver();;
     }
-    
-    /*public Timer getTime() {
-        return t;
-    }*/
     
     public void attach(Observer o){
         observers.add(o);
@@ -100,6 +102,7 @@ public class Time implements Subject{
         }
         notifyObserver();
     }
+    
     public boolean isRunning(){
         return run;
     }
