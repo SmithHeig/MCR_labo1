@@ -28,6 +28,13 @@ public class MCR_Labo01_ObserveurObserve extends JFrame {
         b.addActionListener(actionListener);
     }
 
+    private JFrame createFram(String name, int x, int y){
+        JFrame fram = new JFrame(name);
+        FlowLayout layout = new FlowLayout(FlowLayout.LEFT);
+        fram.setLayout(layout);
+        fram.setSize(x,y);
+        return fram;
+    }
     public MCR_Labo01_ObserveurObserve() {
 
         super("mcr_labo01_observeurobserve.MCR_Labo01_ObserveurObserve");
@@ -42,10 +49,7 @@ public class MCR_Labo01_ObserveurObserve extends JFrame {
         
         addButton("Horloge romaine", 0, 0, Color.BLACK, new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                JFrame fram = new JFrame("Horloge Romaine");
-                FlowLayout layout = new FlowLayout(FlowLayout.LEFT);
-                fram.setLayout(layout);
-                fram.setSize(300,330);
+                JFrame fram = createFram("Horloge romaine", 300, 330);
 
                 fram.add(new ClockRomain(t));
                 fram.setVisible(true);
@@ -54,9 +58,7 @@ public class MCR_Labo01_ObserveurObserve extends JFrame {
         
         addButton("Horloge arabe", 1, 0, Color.BLACK, new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                JFrame fram = new JFrame("Horloge Arabe");
-                fram.setSize(300,330);
-
+                JFrame fram = createFram("Horloge arabe", 300, 330);
                 fram.add(new ClockArab(t));
                 fram.setVisible(true);
             }
@@ -64,10 +66,7 @@ public class MCR_Labo01_ObserveurObserve extends JFrame {
         
         addButton("Horloge numérique", 2, 0, Color.BLACK, new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                JFrame fram = new JFrame("Horloge Numérique");
-                FlowLayout layout = new FlowLayout(FlowLayout.LEFT);
-                fram.setLayout(layout);
-                fram.setSize(300,330);
+                JFrame fram = createFram("Horloge numérique", 300, 330);
 
                 fram.add(new ClockNumeric(t));
                 fram.setVisible(true);
@@ -76,10 +75,7 @@ public class MCR_Labo01_ObserveurObserve extends JFrame {
         
         addButton("Horloge mixte", 3, 0, Color.BLACK, new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                JFrame fram = new JFrame("Horloge Mixte");
-                FlowLayout layout = new FlowLayout(FlowLayout.LEFT);
-                fram.setLayout(layout);
-                fram.setSize(300,990);
+                JFrame fram = createFram("Horloge mixte", 300, 990);
                 
                 ClockRomain cr = new ClockRomain(t);
                 ClockArab ca = new ClockArab(t);
