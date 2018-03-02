@@ -34,6 +34,10 @@ public class Clock  extends JPanel implements Observer{
             });
     }
     
+    public void finalize(){
+        t.detach(this);
+    }
+    
     public void update(){
         /* do nothing */
     }
