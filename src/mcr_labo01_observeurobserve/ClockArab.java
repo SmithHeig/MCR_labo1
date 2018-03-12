@@ -11,6 +11,6 @@ package mcr_labo01_observeurobserve;
  */
 public class ClockArab extends ClockMechanic{
     public ClockArab(Time t){
-        super(t, "clock1.jpg"); 
+        super(t, "./Images/clock1.jpg"); 
     }
 }

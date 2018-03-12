@@ -30,8 +30,6 @@ public class MCR_Labo01_ObserveurObserve extends JFrame {
 
     private JFrame createFram(String name, int x, int y){
         JFrame fram = new JFrame(name);
-        FlowLayout layout = new FlowLayout(FlowLayout.LEFT);
-        fram.setLayout(layout);
         fram.setSize(x,y);
         return fram;
     }
@@ -76,6 +74,8 @@ public class MCR_Labo01_ObserveurObserve extends JFrame {
         addButton("Horloge mixte", 3, 0, Color.BLACK, new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 JFrame fram = createFram("Horloge mixte", 300, 990);
+                FlowLayout layout = new FlowLayout(FlowLayout.LEFT);
+                fram.setLayout(layout);
                 
                 ClockRomain cr = new ClockRomain(t);
                 ClockArab ca = new ClockArab(t);

@@ -11,6 +11,6 @@ package mcr_labo01_observeurobserve;
  */
 public class ClockRomain extends ClockMechanic{
     public ClockRomain(Time t){
-        super(t, "clock2.jpg"); 
+        super(t, "./Images/clock2.jpg"); 
     }    
 }

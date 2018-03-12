@@ -29,13 +29,14 @@ public class ClockMechanic extends Clock{
         super(t);
         clock = Toolkit.getDefaultToolkit().getImage(img);
         clock = clock.getScaledInstance(PREFERED_SIZE, PREFERED_SIZE, 0);
-        this.setPreferredSize(new Dimension(300, 300));
+        this.setPreferredSize(new Dimension(PREFERED_SIZE, PREFERED_SIZE));
     }
     
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-        g.drawImage(clock, 0, 0, this);
+        System.out.println(this.getWidth() + " " + this.getHeight());
+        g.drawImage(clock, 0, 0,this.getWidth(), this.getHeight(), null);
         drawNeedles(g);
     }
     
@@ -48,7 +49,6 @@ public class ClockMechanic extends Clock{
     /** time give in 60 quarter (for hours: hours * 6) **/
     private void drawNeedle(Graphics g, double time, double thickness, double size, Color color){
         Graphics2D g2 = (Graphics2D) g;
-        System.out.println("X: " + this.getWidth() + "Y: " + this.getHeight());
         double startX = this.getWidth()/2;
         double startY = this.getHeight()/ 2;
         double angle = Math.toRadians(time * 6);
