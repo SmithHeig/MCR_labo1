@@ -1,3 +1,9 @@
+/**
+ * @author James Smith et Jeremie Chatillon
+ * @file MCR_Labo01_ObserveurObserve.java
+ * @date 13.03.2018
+ */
+
 package mcr_labo01_observeurobserve;
 
 import javax.swing.*;
@@ -5,16 +11,25 @@ import java.awt.*;
 import java.awt.event.*;
 
 /**
- *
- * @author Jérémie James
+ * @class MCR_Labo01_ObserveurObserve
+ * Class principale du programme (Menu permettant de géré l'application)
  */
 public class MCR_Labo01_ObserveurObserve extends JFrame {
 
+    // Timer des horloges
     private Time t;
     
     // Contraintes pour le placement des composants graphiques
     private final GridBagConstraints constraints = new GridBagConstraints();
 
+    /**
+     * Ajout d'un bouton dans le menu
+     * @param name nom du bouton
+     * @param x position horizontal
+     * @param y position vertical
+     * @param color couleur du bouton
+     * @param actionListener action lorsque le bouton est cliqué
+     */
     private void addButton(String name, int x, int y, Color color, final ActionListener actionListener) {
         JButton b = new JButton(name);
         b.setForeground(color);
@@ -25,11 +40,22 @@ public class MCR_Labo01_ObserveurObserve extends JFrame {
         b.addActionListener(actionListener);
     }
 
+    /**
+     * Création d'une fram
+     * @param name nom de la frame
+     * @param x position horizontal
+     * @param y position vertical
+     * @return une nouvelle fram
+     */
     private JFrame createFram(String name, int x, int y){
         JFrame fram = new JFrame(name);
         fram.setSize(x,y);
         return fram;
     }
+    
+    /**
+     * Constructeur
+     */
     public MCR_Labo01_ObserveurObserve() {
         super("mcr_labo01_observeurobserve.MCR_Labo01_ObserveurObserve");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
