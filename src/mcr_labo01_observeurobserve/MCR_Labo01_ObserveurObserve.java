@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package mcr_labo01_observeurobserve;
 
 import javax.swing.*;
@@ -11,10 +6,12 @@ import java.awt.event.*;
 
 /**
  *
- * @author Jeremie
+ * @author Jérémie James
  */
 public class MCR_Labo01_ObserveurObserve extends JFrame {
 
+    private Time t;
+    
     // Contraintes pour le placement des composants graphiques
     private final GridBagConstraints constraints = new GridBagConstraints();
 
@@ -34,7 +31,6 @@ public class MCR_Labo01_ObserveurObserve extends JFrame {
         return fram;
     }
     public MCR_Labo01_ObserveurObserve() {
-
         super("mcr_labo01_observeurobserve.MCR_Labo01_ObserveurObserve");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         getContentPane().setLayout(new GridBagLayout());
@@ -43,7 +39,7 @@ public class MCR_Labo01_ObserveurObserve extends JFrame {
         constraints.insets = new Insets(3, 3, 3, 3);
         constraints.fill = GridBagConstraints.HORIZONTAL;
         
-        Time t = new Time();
+       t = new Time();
         
         addButton("Horloge romaine", 0, 0, Color.BLACK, new ActionListener() {
             public void actionPerformed(ActionEvent e) {

@@ -10,7 +10,8 @@ package mcr_labo01_observeurobserve;
  * @author james
  */
 public class ClockRomain extends ClockMechanic{
+    private static final String PATH_IMG = "./Images/clock2.jpg";
     public ClockRomain(Time t){
-        super(t, "./Images/clock2.jpg"); 
+        super(t, PATH_IMG); 
     }    
 }

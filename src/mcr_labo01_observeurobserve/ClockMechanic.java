@@ -7,23 +7,22 @@ package mcr_labo01_observeurobserve;
 
 /**
  *
- * @author james
+ * @author James, Jérémie
  */
 
-import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.*;
-import java.lang.Math.*;
 
-public class ClockMechanic extends Clock{
-    Image clock;
-    final int PREFERED_SIZE = 300;
-    final double SECONDE_NEEDLE_THICKNESS = 2;
-    final double MINUTE_NEEDLE_THICKNESS = 3;
-    final double HOUR_NEEDLE_THICKNESS = 5;
-    final double SECONDE_NEEDLE_SIZE_RATIO = 0.4;
-    final double MINUTE_NEEDLE_SIZE_RATIO = 0.3;
-    final double HOUR_NEEDLE_SIZE_RATIO = 0.2;
+
+public abstract class ClockMechanic extends Clock{
+    private Image clock;
+    private final static int PREFERED_SIZE = 300;
+    private final static float SECONDE_NEEDLE_THICKNESS = 2;
+    private final static float MINUTE_NEEDLE_THICKNESS = 3;
+    private final static float HOUR_NEEDLE_THICKNESS = 5;
+    private final static double SECONDE_NEEDLE_SIZE_RATIO = 0.4;
+    private final static double MINUTE_NEEDLE_SIZE_RATIO = 0.3;
+    private final static double HOUR_NEEDLE_SIZE_RATIO = 0.2;
     
     public ClockMechanic(Time t, String img){
         super(t);
@@ -37,6 +36,7 @@ public class ClockMechanic extends Clock{
         super.paintComponent(g);
         g.drawImage(clock, 0, 0,this.getWidth(), this.getHeight(), null);
         drawNeedles(g);
+        repaint();
     }
     
     private void drawNeedles(Graphics g){
@@ -46,7 +46,7 @@ public class ClockMechanic extends Clock{
     }
     
     /** time give in 60 quarter (for hours: hours * 6) **/
-    private void drawNeedle(Graphics g, double time, double thickness, double size, Color color){
+    private void drawNeedle(Graphics g, double time, float thickness, double size, Color color){
         Graphics2D g2 = (Graphics2D) g;
         double startX = this.getWidth()/2;
         double startY = this.getHeight()/ 2;
@@ -56,7 +56,7 @@ public class ClockMechanic extends Clock{
         
         Line2D lin = new Line2D.Double(startX, startY, endX, endY);
         g2.setColor(color);
-        g2.setStroke(new BasicStroke((float)thickness));
+        g2.setStroke(new BasicStroke(thickness));
         g2.draw(lin);
     }
     

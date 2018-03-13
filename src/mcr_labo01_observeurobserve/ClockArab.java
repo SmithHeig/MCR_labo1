@@ -1,16 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package mcr_labo01_observeurobserve;
 
 /**
  *
- * @author james
+ * @author james Jérémie
  */
 public class ClockArab extends ClockMechanic{
+    
+    private static final String PATH_IMG = "./Images/clock1.jpg";
     public ClockArab(Time t){
-        super(t, "./Images/clock1.jpg"); 
+        super(t, PATH_IMG); 
     }
 }

@@ -7,7 +7,7 @@ package mcr_labo01_observeurobserve;
 
 /**
  *
- * @author james
+ * @author James Jérémie
  */
 public interface Subject {
     void attach(Observer o);

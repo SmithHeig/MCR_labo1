@@ -1,27 +1,25 @@
-    /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package mcr_labo01_observeurobserve;
 
 /**
  *
- * @author james
+ * @author james Jérémie
  */
 
-import java.awt.Dimension;
-import java.awt.Graphics;
 import javax.swing.JLabel;
 
 public class ClockNumeric extends Clock{
-    JLabel time;
+    private JLabel time;
+    
+    
     public ClockNumeric(Time t){
         super(t);
         time = new JLabel(t.toString());
         this.add(time);
     }
-        
+    
+    
+    @Override
     public void update(){
         time.setText(t.toString());
     }

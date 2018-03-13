@@ -16,18 +16,18 @@ import java.util.TimerTask;
 
 public class Time implements Subject{
     /** Constante **/
-    final int SECOND = 1000; // une seconde est 1000 millisecondes
+    private final int SECOND = 10; // une seconde est 1000 millisecondes
     
     /* Variable */
     private Timer t;
-    boolean run;
-    TimerTask tt;
+    private boolean run;
+    private TimerTask tt;
     /** Data du timer */
-    int seconds;
-    int minutes;
-    int hours;
+    private int seconds;
+    private int minutes;
+    private int hours;
     /* observer */
-    LinkedList<Observer> observers;
+    private LinkedList<Observer> observers;
     
     public Time(){
         t = new Timer();
@@ -92,7 +92,7 @@ public class Time implements Subject{
         return hours;
     }
     
-    public void increments(){
+    private void increments(){
         if(++seconds >= 60){
             if(++minutes >= 60){
                 ++hours;
