@@ -69,13 +69,14 @@ public class MCR_Labo01_ObserveurObserve extends JFrame {
         
         addButton("Horloge mixte", 3, 0, Color.BLACK, new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                JFrame fram = createFram("Horloge mixte", 300, 990);
-                FlowLayout layout = new FlowLayout(FlowLayout.LEFT);
+                JFrame fram = createFram("Horloge mixte", 320, 900);
+                FlowLayout layout = new FlowLayout(FlowLayout.LEFT, 1, 1);
                 fram.setLayout(layout);
                 
                 ClockRomain cr = new ClockRomain(t);
                 ClockArab ca = new ClockArab(t);
                 ClockNumeric cn = new ClockNumeric(t);
+                
                 
                 fram.add(cr);
                 fram.add(ca);

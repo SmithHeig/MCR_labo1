@@ -16,7 +16,7 @@ import java.util.TimerTask;
 
 public class Time implements Subject{
     /** Constante **/
-    private final int SECOND = 10; // une seconde est 1000 millisecondes
+    private final int SECOND = 1000; // une seconde est 1000 millisecondes
     
     /* Variable */
     private Timer t;
