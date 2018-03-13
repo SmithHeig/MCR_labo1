@@ -1,13 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * @author James Smith et Jeremie Chatillon
+ * @file ClockRomain.java
+ * @date 13.03.2018
  */
+
 package mcr_labo01_observeurobserve;
 
 /**
- *
- * @author james
+ * @class ClockRomain
+ * Horloge à aiguille avec les chiffres romains
  */
 public class ClockRomain extends ClockMechanic{
     private static final String PATH_IMG = "./Images/clock2.jpg";

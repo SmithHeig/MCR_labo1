@@ -1,8 +1,14 @@
+/**
+ * @author James Smith et Jeremie Chatillon
+ * @file ClockArab.java
+ * @date 13.03.2018
+ */
+
 package mcr_labo01_observeurobserve;
 
 /**
- *
- * @author james Jérémie
+ * @class ClockArab
+ * Horloge mechanic (à aiguille) avec les chiffres arabes.
  */
 public class ClockArab extends ClockMechanic{
     
