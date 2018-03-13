@@ -15,29 +15,30 @@ import java.awt.event.*;
  */
 public class Clock  extends JPanel implements Observer{
     //private final GridBagConstraints constraints = new GridBagConstraints();
-    private Time t;
+    protected Time t;
+    
     public Clock(Time t){
         super();
         this.t = t;
+        this.t.attach(this);
         
-        
-        /*super("mcr_labo01_observeurobserve.Clock");
-        //setDefaultCloseOperation();
-        getContentPane().setLayout(new GridBagLayout());
-
-        // Contraintes des composants graphiques
-        constraints.insets = new Insets(3, 3, 3, 3);
-        constraints.fill = GridBagConstraints.HORIZONTAL;
-        JLabel labelText = new JLabel();        
-        getContentPane().add(new JLabel(new ImageIcon("Images/clock1.jpg")));
-
-        labelText.setText ("Il est l'heure");     
-        //getContentPane().add( labelText );
-        setResizable(false);
-        pack();*/
+        addMouseListener(new MouseAdapter() {
+                @Override
+                public void mousePressed(MouseEvent e) {
+                    if(t.isRunning()){
+                        t.stop();
+                    } else {
+                        t.start();
+                    }
+                }
+            });
     }
-        
+    
+    public void finalize(){
+        t.detach(this);
+    }
+    
     public void update(){
-        
+        /* do nothing */
     }
 }

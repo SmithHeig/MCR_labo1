@@ -28,6 +28,11 @@ public class MCR_Labo01_ObserveurObserve extends JFrame {
         b.addActionListener(actionListener);
     }
 
+    private JFrame createFram(String name, int x, int y){
+        JFrame fram = new JFrame(name);
+        fram.setSize(x,y);
+        return fram;
+    }
     public MCR_Labo01_ObserveurObserve() {
 
         super("mcr_labo01_observeurobserve.MCR_Labo01_ObserveurObserve");
@@ -42,49 +47,41 @@ public class MCR_Labo01_ObserveurObserve extends JFrame {
         
         addButton("Horloge romaine", 0, 0, Color.BLACK, new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                JFrame fram = new JFrame("Horloge Romaine");
-                fram.setSize(300,330);
-                ClockRomain cr = new ClockRomain(t);
+                JFrame fram = createFram("Horloge romaine", 300, 330);
 
-                fram.add(cr);
+                fram.add(new ClockRomain(t));
                 fram.setVisible(true);
             }
         });
         
         addButton("Horloge arabe", 1, 0, Color.BLACK, new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                JFrame fram = new JFrame("Horloge Arabe");
-                fram.setSize(300,330);
-
-                ClockArab ca = new ClockArab(t);
-
-                fram.add(ca);
+                JFrame fram = createFram("Horloge arabe", 300, 330);
+                fram.add(new ClockArab(t));
                 fram.setVisible(true);
             }
         });
         
         addButton("Horloge numérique", 2, 0, Color.BLACK, new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                JFrame fram = new JFrame("Horloge Numérique");
-                fram.setSize(300,330);
+                JFrame fram = createFram("Horloge numérique", 300, 330);
 
-                ClockNumeric cn = new ClockNumeric(t);
-
-                fram.setContentPane(cn);
+                fram.add(new ClockNumeric(t));
                 fram.setVisible(true);
             }
         });
         
         addButton("Horloge mixte", 3, 0, Color.BLACK, new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                JFrame fram = new JFrame("Horloge Mixte");
-                fram.setSize(300,990);
+                JFrame fram = createFram("Horloge mixte", 300, 990);
+                FlowLayout layout = new FlowLayout(FlowLayout.LEFT);
+                fram.setLayout(layout);
                 
                 ClockRomain cr = new ClockRomain(t);
                 ClockArab ca = new ClockArab(t);
                 ClockNumeric cn = new ClockNumeric(t);
-
-                fram.setContentPane(cr);
+                
+                fram.add(cr);
                 fram.add(ca);
                 fram.add(cn);
                 fram.setVisible(true);
