@@ -68,9 +68,11 @@ public class Time implements Subject{
      * Remise à 0 du timer (chronomètre)
      */
     public void reset(){
+        this.stop();
         seconds = 0;
         minutes = 0;
         hours = 0;
+        
         notifyObserver();;
     }
     
